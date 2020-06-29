@@ -1,0 +1,15 @@
+---
+all:
+  hosts:
+    35.161.42.72
+    34.216.88.86
+    52.41.29.162
+  children:
+    al2:
+      hosts:
+        35.161.42.72
+	34.216.88.86
+	52.41.29.162
+      vars:
+	ansible_user: ec2-user
+	ansible_python_interpreter: /usr/bin/python
