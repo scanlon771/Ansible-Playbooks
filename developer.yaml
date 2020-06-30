@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install nano
+      package:
+        name: nano
+        state: present 
+    -name: Install apache
+     package: 
+        name: httpd
+        state: present
+    -name: Start amazon apache
+     service:
+       when:
+         - ansible_facts['distribution'] == 'Amazon'
+       name: httpd
+       state: started
+       enabled: true
+       
